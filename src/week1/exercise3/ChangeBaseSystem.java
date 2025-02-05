@@ -24,7 +24,6 @@ public class ChangeBaseSystem {
 
     public String dectobi() {
         StringBuilder binary = new StringBuilder();
-
         int num = Integer.parseInt(input);
         if (num == 0) {
             return "0";
@@ -64,7 +63,6 @@ public class ChangeBaseSystem {
                 throw new IllegalArgumentException("Binary only accept 1 and 0");
             }
         }
-
         return result;
     }
 
@@ -79,7 +77,7 @@ public class ChangeBaseSystem {
             String group = input.substring(i, i + 4);
             ChangeBaseSystem c = new ChangeBaseSystem(group);
             int decimal = c.bitodec();
-            String heximal = dectohex();
+//            String heximal = dectohex();
 
             if (decimal < 10) {
                 hex.append((char) ('0' + decimal));
@@ -87,7 +85,7 @@ public class ChangeBaseSystem {
                 hex.append((char) ('A' + (decimal - 10)));
             }
         }
-
+        
         return hex.toString();
     }
 
