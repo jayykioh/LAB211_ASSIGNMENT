@@ -35,14 +35,13 @@ public class MyStack2 {
 
     public void push(int x) {
         ListNode newnode = new ListNode(x);
-        top.next = newnode;
+        newnode.next = top;
         top = newnode;
         length++;
     }
 
     public int pop() {
         if (isEmpty()) {
-
         }
         int temp = top.data;
         top = top.next;

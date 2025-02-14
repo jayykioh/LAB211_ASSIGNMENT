@@ -48,7 +48,7 @@ public class ChangeBaseSystem {
             }
             num /= 16;
         }
-
+        
         return hex.reverse().toString();
     }
 
@@ -85,7 +85,7 @@ public class ChangeBaseSystem {
                 hex.append((char) ('A' + (decimal - 10)));
             }
         }
-        
+
         return hex.toString();
     }
 
