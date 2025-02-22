@@ -13,68 +13,46 @@ import java.util.Scanner;
  * @author FPT
  */
 public class Teacher extends Person {
-
+    
     private int yearprofesion;
     private String contracttype;
     private double salarycoeff;
-
+    
     public Teacher() {
         super();
         this.yearprofesion = 0;
         this.contracttype = "";
         this.salarycoeff = 0.0;
     }
-
+    
     public int getYearprofesion() {
         return yearprofesion;
     }
-
+    
     public String getContracttype() {
         return contracttype;
     }
-
+    
     public double getSalarycoeff() {
         return salarycoeff;
     }
-
-    @Override
-   public  void InputAll(Scanner sc) {
-        super.InputAll(sc); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/OverriddenMethodBody
-        while (true) {
-            System.out.println("Enter year in the profession: ");
-            int year = sc.nextInt();
-            if (year > 0 && year < (Year.now().getValue() - this.getYob())) {
-                this.yearprofesion = year;
-                break;
-            } else {
-                System.out.println("Year in the profession is number from 0 to lower than age");
-            }
+    
+    public void InputAll(int id, String name, String phone, int year, String major, int yearprofession, String c, double salary) {
+        super.InputAll(id, name, phone, year, major);
+        if (yearprofession > 0 && yearprofession < (Year.now().getValue() - this.getYob())) {
+            this.yearprofesion = yearprofession;
         }
-        while (true) {
-            System.out.println("Enter contract type: ");
-            String c = sc.nextLine();
-            if (c.equals("Short") || c.equals("Long")) {
-                this.contracttype = c;
-                break;
-            } else {
-                System.out.println("Contract type is Long or Short value");
-            }
+        if (c.equals("Short") || c.equals("Long")) {
+            this.contracttype = c;
         }
-        while (true) {
-            System.out.println("Enter salary coefficient: ");
-            double salary = sc.nextDouble();
-            if (salary < 0) {
-                System.out.println("Salary coefficient must be number from 0");
-            } else {
-                this.salarycoeff = salary;
-                break;
-            }
+        if (salary < 0) {
+            System.out.println("Salary coefficient must be number from 0");
         }
     }
-
+    
     @Override
     public String toString() {
         return String.format("%s %-15d %-15s %-10.2f", super.toString(), yearprofesion, contracttype, salarycoeff);
     }
-
+    
 }

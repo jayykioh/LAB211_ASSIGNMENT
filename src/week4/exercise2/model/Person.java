@@ -97,59 +97,22 @@ public class Person {
         this.major = major;
     }
 
-    public void InputAll(Scanner sc) {
-        while (true) {
-            System.out.println("Enter ID(6 digits): ");
-            int id = CheckInput.inputPositiveInt();
-            if (isValidID(id)) {
-                this.ID = id;
-                break;
-            } else {
-                System.out.println("ID MUST BE 6 DIGITS");
-                continue;
-            }
+    public void InputAll(int id, String name, String phone, int year, String major) {
+        if (isValidID(id)) {
+            this.ID = id;
         }
-        while (true) {
-            System.out.println("Enter full name: ");
-            String name = CheckInput.inputString();
-            if (isValidName(name)) {
-                this.name = name;
-                break;
-            } else {
-                System.out.println("NAME MUST BE ALPHABET AND BLANKS");
-                continue;
-            }
+        if (isValidName(name)) {
+            this.name = name;
         }
-        while (true) {
-            System.out.println("Enter phone number: ");
-            String phone = CheckInput.inputString();
-            if (isValidPhone(phone)) {
-                this.phonenumber = phone;
-                break;
-            } else {
-                System.out.println("PHONE MUST BE 12 DIGITS");
-            }
-        }
-        while (true) {
-            System.out.println("Enter Year or Birth: ");
-            int year = CheckInput.inputPositiveInt();
-            if (isValidYear(year)) {
-                this.yob = year;
-                break;
-            } else {
-                System.out.println("YEAR OF BIRTH MUST BE BEFORE CURRENT YEAR");
-            }
-        }
+        if (isValidPhone(phone)) {
+            this.phonenumber = phone;
 
-        while (true) {
-            System.out.println("Enter Major(No more than 30 characters): ");
-            String major = CheckInput.inputString();
-            if (isValidMajor(major)) {
-                this.major = major;
-                break;
-            } else {
-                System.out.println("MAJOR IS NO MORE THAN 30 CHARACTERS");
-            }
+        }
+        if (isValidYear(year)) {
+            this.yob = year;
+        }
+        if (isValidMajor(major)) {
+            this.major = major;
         }
     }
 

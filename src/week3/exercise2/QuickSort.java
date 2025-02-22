@@ -44,15 +44,13 @@ public class QuickSort {
         return j - 1;
     }
 
-public void quicksort(int low, int high) {
-    if (low < high) {
-        int p = partition(low, high); 
-        quicksort(low, p - 1);        
-        quicksort(p + 1, high);       
+    public void quicksort(int low, int high) {
+        if (low < high) {
+            int p = partition(low, high);
+            quicksort(low, p - 1);
+            quicksort(p + 1, high);
+        } 
     }
-}
-
-
     public boolean isEmpty() {
         return arr == null || arr.length == 0;
     }
@@ -97,12 +95,10 @@ public void quicksort(int low, int high) {
         b.generatenumber();
         System.out.print("Unsort array: ");
         b.display();
-        
-        
-        b.quicksort(0,b.arr.length - 1);
+
+        b.quicksort(0, b.arr.length - 1);
         System.out.print("Sorted array; ");
         b.display();
-        
-        
+
     }
 }

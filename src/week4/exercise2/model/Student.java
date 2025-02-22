@@ -32,28 +32,13 @@ public class Student extends Person {
         return englishscore;
     }
 
-    @Override
-    public void InputAll(Scanner sc) {
-        super.InputAll(sc);
-        while (true) {
-            System.out.println("Enter year of admission: ");
-            int year = CheckInput.inputPositiveInt();
-            if (year >= getYob() && year <= Year.now().getValue()) {
-                this.yearadmission = year;
-                break;
-            } else {
-                System.out.println("Year of admission must be between birth year and current year");
-            }
+    public void InputAll(int id, String name, String phone, int year, String major, int year2, int elscore) {
+        super.InputAll(id, name, phone, year, major);
+        if (year2 >= getYob() && year2 <= Year.now().getValue()) {
+            this.yearadmission = year2;
         }
-        while (true) {
-            System.out.println("Enter Entrance English Score: ");
-            int elscore = CheckInput.inputPositiveInt();
-            if (elscore >= 0 && elscore <= 100) {
-                this.englishscore = elscore;
-                break;
-            } else {
-                System.out.println("Entrance English score must be from 0 to 100");
-            }
+        if (elscore >= 0 && elscore <= 100) {
+            this.englishscore = elscore;
         }
     }
 
