@@ -81,7 +81,7 @@ public class ReservationManagement {
             System.out.println("Time pick up: ");
             LocalDateTime timePickUp = CheckInput.inputDateTime();
             if (timePickUp.toLocalDate().isBefore(bookingDate)) {
-                System.out.println("Time pick up can not befor the booking date");
+                System.out.println("Time pick up can not before the booking date");
                 return;
             }
             flightInfo = new FlightInformation(flightNumber, seatNumber, timePickUp);
@@ -129,7 +129,7 @@ public class ReservationManagement {
         System.out.print("New Booking Date: ");
         String date = scanner.nextLine();
         if (!date.isBlank()) {
-            res.setDateTime(LocalDate.parse(date, DateTimeFormatter.ofPattern("dd/MM/yyyy")));
+            res.setDateTime(LocalDate.parse(date, DateTimeFormatter.ofPattern("dd-MM-yyyy")));
         }
         
         System.out.println("Updated successfully!");

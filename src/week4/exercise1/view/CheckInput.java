@@ -28,11 +28,27 @@ public class CheckInput {
                 if (result > 0) {
                     return result;
                 } else {
-                    System.out.println("Input must be a positive integer");
+                    System.out.println("Input must be a positive double");
                     System.out.println("Please input again: ");
                 }
             } catch (NumberFormatException e) {
-                System.out.println("Input must be an integer");
+                System.out.println("Input must be an double");
+                System.out.println("Please input again: ");
+            }
+        }
+    }
+        public static float InputFloat() {
+        while (true) {
+            try {
+                float result = Float.parseFloat(inputString());
+                if (result > 0) {
+                    return result;
+                } else {
+                    System.out.println("Input must be a positive float");
+                    System.out.println("Please input again: ");
+                }
+            } catch (NumberFormatException e) {
+                System.out.println("Input must be an float");
                 System.out.println("Please input again: ");
             }
         }
